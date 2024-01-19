@@ -903,6 +903,9 @@ export class LexicalNode {
     if ($getCompositionKey() === toReplaceKey) {
       $setCompositionKey(key);
     }
+
+    getActiveEditor()._replacedNodes.set(toReplaceKey, key);
+
     return writableReplaceWith;
   }
 

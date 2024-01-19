@@ -590,6 +590,8 @@ export class LexicalEditor {
   /** @internal */
   _blockCursorElement: null | HTMLDivElement;
 
+  _replacedNodes: Map<NodeKey, NodeKey>;
+
   /** @internal */
   constructor(
     editorState: EditorState,
@@ -650,6 +652,8 @@ export class LexicalEditor {
     this._headless = parentEditor !== null && parentEditor._headless;
     this._window = null;
     this._blockCursorElement = null;
+
+    this._replacedNodes = new Map();
   }
 
   /**
